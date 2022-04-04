@@ -11,9 +11,17 @@ import java.io.File;
 
 public class FileUtils {
 
+    public static boolean isValidDirectory(String path){
+        File file = new File(path);
 
+        if(!file.exists()){
+            return false;
+        }
+
+        return true;
+    }
     public static void main(String[] args) {
 
-        System.out.println( "hola");
+        System.out.println(isValidDirectory("hola") );
     }
 }
