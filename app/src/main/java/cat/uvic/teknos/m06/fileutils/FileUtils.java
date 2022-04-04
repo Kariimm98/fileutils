@@ -13,6 +13,8 @@ public class FileUtils {
 
     public static boolean isValidDirectory(String path){
         File file = new File(path);
+        File[] childs;
+
 
         if(!file.exists()){
             return false;
@@ -21,10 +23,16 @@ public class FileUtils {
         if(!file.isDirectory()){
             return false;
         }
+
+        if(file.listFiles().length == 0){
+            return false;
+        }
+
+
         return true;
     }
     public static void main(String[] args) {
 
-        System.out.println(isValidDirectory("hola") );
+        System.out.println(isValidDirectory("C:\\Users\\10011093\\OneDrive - Universitat de Vic\\Escritorio\\porves") );
     }
 }
