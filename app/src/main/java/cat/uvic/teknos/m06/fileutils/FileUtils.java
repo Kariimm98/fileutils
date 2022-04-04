@@ -18,6 +18,9 @@ public class FileUtils {
             return false;
         }
 
+        if(!file.isDirectory()){
+            return false;
+        }
         return true;
     }
     public static void main(String[] args) {
